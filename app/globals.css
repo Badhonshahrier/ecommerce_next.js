@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Converting color values to HSL format for Tailwind compatibility */
+  --background: 0 0% 100%;
+  --foreground: 215 25% 27%;
+  --card: 210 40% 96%;
+  --card-foreground: 215 25% 27%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 25% 27%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 84% 39%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 25% 27%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 346 87% 43%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 220 13% 91%;
+  --ring: 160 84% 39%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Converting dark mode colors to HSL format */
+  --background: 222 84% 5%;
+  --foreground: 213 31% 91%;
+  --card: 217 33% 17%;
+  --card-foreground: 213 31% 91%;
+  --popover: 217 33% 17%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 84% 39%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 215 28% 17%;
+  --muted-foreground: 217 11% 65%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 215 28% 17%;
+  --input: 217 33% 17%;
+  --ring: 160 84% 39%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Custom toast styles */
+  .toast {
+    @apply fixed top-4 right-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 z-50 transition-all duration-300;
+  }
+
+  .toast.success {
+    @apply border-green-500 bg-green-50 dark:bg-green-900/20;
+  }
+
+  .toast.error {
+    @apply border-red-500 bg-red-50 dark:bg-red-900/20;
+  }
+}
